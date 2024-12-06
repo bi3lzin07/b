@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Acessórios para Celulares</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2d89ef;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #2d89ef;
+            overflow-x: hidden;
+            transform: translateX(-250px);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer a {
+            display: block;
+            color: white;
+            font-size: 18px;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .drawer a:hover {
+            background-color: #1e6bb8;
+        }
+
+        .drawer-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            background-color: #2d89ef;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .drawer-toggle:hover {
+            background-color: #1e6bb8;
+        }
+
+        .main-content {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #2d89ef;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            color: #fff;
+            background-color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #1da851;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                margin-left: 270px;
+            }
+
+            .drawer-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Loja de Acessórios para Celulares
+</header>
+
+<!-- Menu Drawer -->
+<div id="drawer" class="drawer">
+    <a href="#capinhas">Capinhas</a>
+    <a href="#carregadores">Carregadores</a>
+    <a href="#peliculas">Películas</a>
+    <a href="#outros">Outros</a>
+</div>
+
+<button class="drawer-toggle" onclick="toggleDrawer()">☰</button>
+
+<div class="main-content">
+    <!-- Categoria Capinhas -->
+    <div id="capinhas" class="category">
+        <h2 class="category-title">Capinhas</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="adicione-sua-imagem-aqui.jpg" alt="Capinha">
+                <p class="product-description">Capinha de silicone.</p>
+                <a href="https://wa.me/seu_numero_de_whatsapp" target="_blank" class="whatsapp-link">Compre pelo WhatsApp</a>
+            </div>
+            <div class="product-list">
+                <div class="product">
+                    <img src="adicione-sua-imagem-aqui.jpg" alt="Capinha">
+                    <p class="product-description">Capinha de silicone.</p>
+                    <a href="https://wa.me/seu_numero_de_whatsapp" target="_blank" class="whatsapp-link">Compre pelo WhatsApp</a>
+                </div>
+                <div class="product-list">
+                    <div class="product">
+                        <img src="adicione-sua-imagem-aqui.jpg" alt="Capinha">
+                        <p class="product-description">Capinha de silicone.</p>
+                        <a href="https://wa.me/seu_numero_de_whatsapp" target="_blank" class="whatsapp-link">Compre pelo WhatsApp</a>
+                    </div>
+        </div>
+    </div>
+
+    <!-- Categoria peliculas -->
+    <div id="carregadores" class="category">
+        <h2 class="category-title">Peliculas</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="adicione-sua-imagem-aqui.jpg" alt="Carregador">
+                <p class="product-description">Carregador rápido 20W.</p>
+                <a href="https://wa.me/seu_numero_de_whatsapp" target="_blank" class="whatsapp-link">Compre pelo WhatsApp</a>
+            </div>
+            <!-- Adicione mais produtos aqui -->
+        </div>
+    </div>
+
+    <!-- Outras categorias podem ser adicionadas aqui -->
+</div>
+
+<script>
+    function toggleDrawer() {
+        const drawer = document.getElementById('drawer');
+        drawer.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
